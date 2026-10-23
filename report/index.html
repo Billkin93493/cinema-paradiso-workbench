@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>逐镜拉片报告</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="report-toolbar">
+      <div>
+        <span class="eyebrow">新天堂电影院·导演工作台</span>
+        <strong>拉片报告预览</strong>
+      </div>
+      <div class="toolbar-actions">
+        <button class="button button-primary" type="button" onclick="window.print()">打印 / 导出 PDF</button>
+      </div>
+    </header>
+
+    <main class="report-document" id="report-document">
+      <section class="report-page report-waiting">
+        <div>
+          <p class="kicker">SHOT-BY-SHOT ANALYSIS</p>
+          <h1>正在准备真实拉片报告</h1>
+          <p>请从“新天堂电影院·导演工作台”的导出中心打开本报告。</p>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
