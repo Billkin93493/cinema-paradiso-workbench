@@ -1,0 +1,22 @@
+{
+  "name": "cinema-paradiso-director-workbench",
+  "productName": "新天堂电影院·导演工作台",
+  "version": "0.9.0",
+  "private": true,
+  "description": "面向导演与影视学生的个人拉片和导演资料库",
+  "main": "desktop/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:native-mac": "zsh macos/build.sh",
+    "package:mac": "electron-packager . \"新天堂电影院·导演工作台\" --platform=darwin --arch=arm64 --out=dist --overwrite --app-bundle-id=com.cinemaparadiso.directorworkbench --ignore=\"^/(\\.tools|dist|tmp|AGENTS\\.md|PROJECT\\.md)\""
+  },
+  "devDependencies": {
+    "@electron/packager": "20.0.1",
+    "electron": "42.3.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Billkin93493/cinema-paradiso-workbench.git"
+  }
+}
