@@ -1,0 +1,1529 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新天堂电影院·导演工作台｜视觉预览</title>
+    <link rel="stylesheet" href="./styles.css?v=20260613-basic-scene" />
+  </head>
+  <body>
+    <div class="opening-splash" id="opening-splash" aria-label="软件启动画面">
+      <div class="opening-grid" aria-hidden="true"></div>
+      <div class="opening-scanline" aria-hidden="true"></div>
+      <div class="opening-splash-orb" aria-hidden="true"></div>
+      <div class="opening-splash-content">
+        <div class="opening-logo-system" aria-hidden="true">
+          <span class="opening-ring ring-one"></span>
+          <span class="opening-ring ring-two"></span>
+          <img class="opening-app-icon" src="./assets/app-icon.png" alt="" />
+          <span class="opening-light-line line-top"></span>
+          <span class="opening-light-line line-bottom"></span>
+        </div>
+        <p class="opening-kicker">CINEMA PARADISO CORE · ONLINE</p>
+        <h1>新天堂电影院已开启，欢迎进入世界的中心。</h1>
+        <p class="opening-subtitle">DIRECTOR WORKBENCH SYSTEM READY</p>
+      </div>
+    </div>
+
+    <div class="launch-screen" id="launch-screen" hidden>
+      <section class="launch-panel" aria-labelledby="launch-title">
+        <div class="launch-circuit" aria-hidden="true"></div>
+        <div class="launch-panel-copy">
+          <div class="opening-logo-system launch-logo-system" aria-hidden="true">
+            <span class="opening-ring ring-one"></span>
+            <span class="opening-ring ring-two"></span>
+            <img class="opening-app-icon" src="./assets/app-icon.png" alt="" />
+          </div>
+          <p class="eyebrow">DIRECTOR OS · WORLD CENTER</p>
+          <h2 id="launch-title">新天堂电影院已开启</h2>
+          <p>欢迎进入世界的中心。选择一条路径，继续你的影像研究。</p>
+        </div>
+        <div class="launch-actions">
+          <button class="primary-button" id="launch-continue" type="button">进入工作台</button>
+          <button class="secondary-button" id="launch-new-project" type="button">＋ 新建拉片</button>
+          <button class="secondary-button" id="launch-guide" type="button">查看新用户指南</button>
+        </div>
+        <button class="launch-skip" id="launch-skip" type="button">直接进入影片库</button>
+      </section>
+    </div>
+
+    <div class="app-shell library-search-visible">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div>
+            <strong>新天堂电影院</strong>
+            <small>导演工作台</small>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="主要页面">
+          <button class="nav-item active" data-page="library">
+            <span class="nav-icon">◫</span>
+            <span>影片库</span>
+          </button>
+          <button class="nav-item" data-page="workbench">
+            <span class="nav-icon">▶</span>
+            <span>拉片工作台</span>
+          </button>
+          <button class="nav-item" data-page="archive">
+            <span class="nav-icon">◇</span>
+            <span>导演资料库</span>
+          </button>
+          <button class="nav-item" data-page="inspiration">
+            <span class="nav-icon">✦</span>
+            <span>灵感板</span>
+          </button>
+          <button class="nav-item" data-page="export">
+            <span class="nav-icon">⇩</span>
+            <span>导出中心</span>
+          </button>
+          <button class="nav-item" data-page="settings">
+            <span class="nav-icon">⚙</span>
+            <span>个人设置</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-section library-category-section">
+          <div class="sidebar-label-row">
+            <p class="sidebar-label">我的分类</p>
+            <button class="mini-add-button" id="add-library-category" type="button" aria-label="新增分类">+</button>
+          </div>
+          <div class="mini-nav-list" id="library-category-list">
+            <button class="mini-nav" type="button" data-library-category="feature"><span class="dot blue"></span><span>剧情长片</span> <b>0</b></button>
+            <button class="mini-nav" type="button" data-library-category="ad"><span class="dot violet"></span><span>广告参考</span> <b>0</b></button>
+            <button class="mini-nav" type="button" data-library-category="short"><span class="dot cyan"></span><span>短片研究</span> <b>0</b></button>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="sync-card">
+            <div class="sync-icon">✓</div>
+            <div>
+              <strong>资料已保存</strong>
+              <small>原片仅保留在本机</small>
+            </div>
+          </div>
+          <button class="user-card" data-page-jump="settings">
+            <span class="avatar">导</span>
+            <span><strong>我的工作台</strong><small>个人空间</small></span>
+            <span class="more">•••</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">PERSONAL CINEMA LAB</p>
+            <h1 id="page-title">影片库</h1>
+          </div>
+          <div class="top-actions">
+            <label class="global-search">
+              <span>⌕</span>
+              <input id="global-search-input" type="search" placeholder="搜索最近项目影片名" />
+              <kbd>⌘ K</kbd>
+            </label>
+            <button class="icon-button" aria-label="通知">○</button>
+            <button class="primary-button" data-action="new-project">
+              <span>＋</span> 新建拉片
+            </button>
+          </div>
+        </header>
+
+        <section class="page active" id="library-page">
+          <div class="library-category-overview" id="library-category-overview" hidden>
+            <div>
+              <p class="eyebrow">MY CATEGORIES</p>
+              <h2 id="library-category-title">我的分类</h2>
+              <p id="library-category-description">分类里的所有影片会在这里集中展示。</p>
+            </div>
+            <div class="library-category-actions">
+              <button class="secondary-button" id="back-to-library" type="button">返回影片库</button>
+              <button class="primary-button" id="add-library-category-inline" type="button">＋ 新建分类</button>
+            </div>
+          </div>
+
+          <div class="welcome-row">
+            <div>
+              <h2>晚上好，继续你的影像研究</h2>
+              <p>你的影片、镜头和导演笔记都在这里。</p>
+            </div>
+            <div class="view-switch" aria-label="视图切换">
+              <button class="active">▦</button>
+              <button>☷</button>
+            </div>
+          </div>
+
+          <article class="continue-card">
+            <div class="continue-visual" id="continue-visual">
+              <img id="continue-cover" src="./assets/still-07.png" alt="《潮汐之后》的电影静帧" />
+              <span class="library-cover-placeholder" id="continue-cover-placeholder" hidden>影</span>
+              <span class="film-type" id="continue-film-type">正在拉片</span>
+              <button class="play-fab" data-page-jump="workbench" aria-label="继续拉片">▶</button>
+            </div>
+            <div class="continue-copy">
+              <div class="card-kicker">继续上次进度</div>
+              <h3>《潮汐之后》</h3>
+              <p class="film-meta">剧情长片 · 124分钟 · 已分析 186 个镜头</p>
+              <p class="film-note">正在整理“咖啡馆重逢”段落的人物调度与声音关系。</p>
+              <div class="progress-meta">
+                <span id="continue-progress-label">完成度 68%</span>
+                <span id="continue-updated-label">上次编辑：今天 21:36</span>
+              </div>
+              <div class="progress-track"><span id="continue-progress-bar" style="width:68%"></span></div>
+              <div class="continue-actions">
+                <button class="primary-button" data-page-jump="workbench">继续拉片</button>
+                <button class="secondary-button" data-action="preview">查看概览</button>
+              </div>
+            </div>
+            <div class="project-stats">
+              <div><strong>186</strong><span>镜头</span></div>
+              <div><strong>42</strong><span>静帧收藏</span></div>
+              <div><strong>9</strong><span>片段收藏</span></div>
+            </div>
+          </article>
+
+          <div class="section-heading">
+            <div>
+              <h2 id="library-section-title">最近项目</h2>
+              <p id="library-section-description">按最近编辑时间排列</p>
+            </div>
+            <button class="text-button" id="view-all-projects" type="button">查看全部 →</button>
+          </div>
+
+          <div class="project-grid" id="project-grid">
+            <article class="project-card" data-page-jump="workbench">
+              <div class="poster-frame">
+                <img src="./assets/still-01.png" alt="海边车站电影静帧" />
+                <span class="duration">02:04:18</span>
+              </div>
+              <div class="project-copy">
+                <span class="status-dot working"></span>
+                <div><h3>潮汐之后</h3><p>剧情长片 · 68%</p></div>
+                <button aria-label="更多">•••</button>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="poster-frame">
+                <img src="./assets/still-05.png" alt="雨夜街道电影静帧" />
+                <span class="duration">00:01:36</span>
+              </div>
+              <div class="project-copy">
+                <span class="status-dot done"></span>
+                <div><h3>雨幕计划</h3><p>品牌广告 · 已完成</p></div>
+                <button aria-label="更多">•••</button>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="poster-frame">
+                <img src="./assets/still-09.png" alt="长廊人物电影静帧" />
+                <span class="duration">00:18:42</span>
+              </div>
+              <div class="project-copy">
+                <span class="status-dot paused"></span>
+                <div><h3>无人知晓的房间</h3><p>剧情短片 · 31%</p></div>
+                <button aria-label="更多">•••</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="workbench-page">
+          <div class="workbench-toolbar">
+            <div>
+              <div class="breadcrumb">影片库　/　潮汐之后</div>
+              <div class="workbench-title">
+                <h2>场景 12 · 咖啡馆重逢</h2>
+                <span class="save-state">✓ 已自动保存</span>
+              </div>
+            </div>
+            <div class="toolbar-actions">
+              <button class="secondary-button cut-edit-action" data-action="move-cut">移动切点</button>
+              <button
+                class="secondary-button cut-edit-action"
+                data-action="delete-cut"
+                title="删除当前镜头前的切点，并安全合并到前一镜"
+              >删除切点</button>
+              <button class="secondary-button" data-action="export">导出</button>
+              <button class="primary-button" data-action="add-shot">＋ 添加切点</button>
+            </div>
+          </div>
+
+          <div class="workbench-layout">
+            <div class="player-column">
+              <div class="player-card">
+                <div class="video-stage">
+                  <img id="main-frame" src="./assets/still-07.png" alt="当前镜头画面" />
+                  <video id="local-video" preload="metadata"></video>
+                  <div class="frame-badge">镜头 087</div>
+                  <button class="center-play" aria-label="播放或暂停">▶</button>
+                </div>
+                <div class="player-controls">
+                  <div class="transport-controls" aria-label="播放器控制">
+                    <button id="player-skip-back" type="button" aria-label="后退5秒" title="后退5秒（←）">−5s</button>
+                    <button id="player-frame-back" type="button" aria-label="上一帧" title="上一帧（,）">−1f</button>
+                    <button class="main-play" type="button" aria-label="播放或暂停" title="播放或暂停（空格）">▶</button>
+                    <button id="player-frame-forward" type="button" aria-label="下一帧" title="下一帧（.）">+1f</button>
+                    <button id="player-skip-forward" type="button" aria-label="前进5秒" title="前进5秒（→）">+5s</button>
+                  </div>
+                  <span class="timecode">00:42:16:08</span>
+                  <div class="scrubber"><span></span><i></i></div>
+                  <span class="timecode muted">02:04:18:12</span>
+                  <button class="speed-button" id="player-speed" type="button" aria-label="切换播放速度" title="切换播放速度">1×</button>
+                  <button id="player-fullscreen" type="button" aria-label="全屏播放" title="全屏播放">⛶</button>
+                </div>
+              </div>
+
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div><strong>镜头时间线</strong><span id="timeline-summary">场景 12 · 8个镜头</span></div>
+                  <div class="timeline-actions">
+                    <button id="timeline-zoom-out" type="button" aria-label="缩小时间线">−</button><span id="timeline-zoom-label">100%</span><button id="timeline-zoom-in" type="button" aria-label="放大时间线">＋</button>
+                  </div>
+                </div>
+                <div class="shot-strip" id="shot-strip">
+                  <button class="shot-item" data-frame="05" data-shot="085">
+                    <img src="./assets/still-05.png" alt="" /><span>085</span><small>4.2s</small>
+                  </button>
+                  <button class="shot-item" data-frame="06" data-shot="086">
+                    <img src="./assets/still-06.png" alt="" /><span>086</span><small>6.8s</small>
+                  </button>
+                  <button class="shot-item active" data-frame="07" data-shot="087">
+                    <img src="./assets/still-07.png" alt="" /><span>087</span><small>8.1s</small>
+                  </button>
+                  <button class="shot-item" data-frame="08" data-shot="088">
+                    <img src="./assets/still-08.png" alt="" /><span>088</span><small>3.4s</small>
+                  </button>
+                  <button class="shot-item" data-frame="03" data-shot="089">
+                    <img src="./assets/still-03.png" alt="" /><span>089</span><small>5.6s</small>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <aside class="analysis-panel">
+              <div class="analysis-head">
+                <span class="analysis-shot-label" id="analysis-shot-label">镜头 087</span>
+                <div class="workbench-side-tabs" role="tablist" aria-label="右侧工作区">
+                  <button
+                    class="workbench-side-tab active"
+                    id="director-analysis-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="director-analysis-panel"
+                  >导演分析</button>
+                  <button
+                    class="workbench-side-tab"
+                    id="basic-scene-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="basic-scene-panel"
+                  >基础识别</button>
+                  <button
+                    class="workbench-side-tab"
+                    id="subtitle-dialogue-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="subtitle-dialogue-panel"
+                  >字幕对白 <span id="subtitle-tab-count">2</span></button>
+                </div>
+                <button class="favorite" id="favorite-frame" aria-label="收藏静帧">◇</button>
+              </div>
+              <div class="side-tab-panel director-analysis-panel" id="director-analysis-panel" role="tabpanel" aria-labelledby="director-analysis-tab">
+                <div class="representative-frame-control">
+                  <div>
+                    <strong>代表静帧</strong>
+                    <small id="representative-frame-status">自动选择镜头画面</small>
+                  </div>
+                  <button id="set-representative-frame" type="button">当前画面设为代表静帧</button>
+                </div>
+                <div class="time-fields">
+                  <label>入点<input id="shot-in" value="00:42:12:04" inputmode="numeric" autocomplete="off" /></label>
+                  <label>出点<input id="shot-out" value="00:42:20:08" inputmode="numeric" autocomplete="off" /></label>
+                  <label>时长<input id="shot-duration" value="8.1 秒" readonly /></label>
+                </div>
+                <div class="form-section">
+                  <p class="form-label">画面基础</p>
+                  <div class="tag-row selectable">
+                    <button data-shot-size="全景">全景</button><button class="selected" data-shot-size="中景">中景</button><button data-shot-size="近景">近景</button><button data-shot-size="特写">特写</button>
+                  </div>
+                  <div class="two-fields">
+                    <label>机位<select id="shot-angle"><option>平视</option><option>俯视</option><option>仰视</option></select></label>
+                    <label>运镜<select id="shot-movement"><option>固定</option><option>推镜</option><option>横移</option></select></label>
+                  </div>
+                </div>
+                <div class="form-section grow">
+                  <p class="form-label">导演笔记</p>
+                  <textarea id="director-note">两人之间始终保留桌面的横向距离。镜头固定，让停顿和海面背景共同承担人物关系的疏离感。</textarea>
+                </div>
+                <div class="structure-board-card">
+                  <div class="structure-board-heading">
+                    <div>
+                      <p class="form-label">结构画板</p>
+                      <small>一部影片共用一张思维导图，切到任意镜头都会打开同一个画板。</small>
+                    </div>
+                    <button id="open-structure-board" type="button">展开结构画板</button>
+                  </div>
+                  <button class="structure-board-preview" id="structure-board-preview" type="button" aria-label="预览并打开结构画板">
+                    <div class="structure-board-mini-canvas" id="structure-board-mini-canvas"></div>
+                    <span id="structure-board-empty">点击展开，整理人物关系、段落结构或主题线索。</span>
+                  </button>
+                </div>
+                <div class="archive-action-group">
+                  <button class="archive-button" data-action="archive">
+                    <span class="archive-button-icon">◇</span>
+                    <span class="archive-button-label">收藏当前静帧</span>
+                  </button>
+                  <button class="archive-button clip-archive-button" id="archive-current-clip">
+                    <span class="archive-button-icon">◇</span>
+                    <span class="archive-button-copy"><strong>收藏当前片段</strong><small id="current-clip-summary">按当前镜头的入点和出点保存</small></span>
+                  </button>
+                </div>
+                <div class="clip-collection">
+                  <button class="clip-range-toggle" id="toggle-clip-range" aria-expanded="false">
+                    <span>自定义片段范围</span><span>⌄</span>
+                  </button>
+                  <div class="clip-range-panel" id="clip-range-panel" hidden>
+                    <div class="clip-range-readout">
+                      <div><span>入点</span><strong id="clip-in-time">00:00:00:00</strong></div>
+                      <div><span>出点</span><strong id="clip-out-time">00:00:00:00</strong></div>
+                      <div><span>时长</span><strong id="clip-range-duration">0.0 秒</strong></div>
+                    </div>
+                    <div class="clip-range-actions">
+                      <button id="set-clip-in">当前画面设为入点</button>
+                      <button id="set-clip-out">当前画面设为出点</button>
+                    </div>
+                    <p id="clip-range-hint">默认使用当前镜头范围，也可以播放到任意位置重新设置。</p>
+                    <button class="save-custom-clip" id="save-custom-clip">收藏这个片段</button>
+                  </div>
+                </div>
+              </div>
+              <div class="side-tab-panel basic-scene-panel" id="basic-scene-panel" role="tabpanel" aria-labelledby="basic-scene-tab" hidden>
+                <div class="basic-scene-summary">
+                  <div>
+                    <span>当前镜头</span>
+                    <strong id="basic-scene-summary">本机识别已完成</strong>
+                  </div>
+                  <span class="basic-scene-overall" id="basic-scene-overall">建议检查</span>
+                </div>
+                <p class="basic-scene-privacy">只分析本机代表静帧，不上传原始影片</p>
+                <div class="basic-scene-progress" id="basic-scene-progress" hidden>
+                  <div><span>正在识别全部镜头</span><strong id="basic-scene-progress-percent">0%</strong></div>
+                  <div class="basic-scene-progress-track"><span id="basic-scene-progress-bar"></span></div>
+                </div>
+                <div class="basic-scene-list">
+                  <section class="basic-scene-card" data-basic-card="people">
+                    <div class="basic-scene-card-head">
+                      <div><span>01</span><strong>人物数量</strong></div>
+                      <em data-basic-confidence="people">高可信 82%</em>
+                    </div>
+                    <div class="basic-scene-options">
+                      <button data-basic-field="people" data-basic-value="无人">无人</button>
+                      <button data-basic-field="people" data-basic-value="单人">单人</button>
+                      <button class="selected" data-basic-field="people" data-basic-value="双人">双人</button>
+                      <button data-basic-field="people" data-basic-value="多人">多人</button>
+                    </div>
+                  </section>
+                  <section class="basic-scene-card" data-basic-card="timeOfDay">
+                    <div class="basic-scene-card-head">
+                      <div><span>02</span><strong>昼夜</strong></div>
+                      <em data-basic-confidence="timeOfDay">建议检查 64%</em>
+                    </div>
+                    <div class="basic-scene-options three">
+                      <button class="selected" data-basic-field="timeOfDay" data-basic-value="日景">日景</button>
+                      <button data-basic-field="timeOfDay" data-basic-value="夜景">夜景</button>
+                      <button data-basic-field="timeOfDay" data-basic-value="不确定">不确定</button>
+                    </div>
+                  </section>
+                  <section class="basic-scene-card" data-basic-card="setting">
+                    <div class="basic-scene-card-head">
+                      <div><span>03</span><strong>室内外</strong></div>
+                      <em data-basic-confidence="setting">人工确认</em>
+                    </div>
+                    <div class="basic-scene-options three">
+                      <button class="selected" data-basic-field="setting" data-basic-value="室内">室内</button>
+                      <button data-basic-field="setting" data-basic-value="室外">室外</button>
+                      <button data-basic-field="setting" data-basic-value="不确定">不确定</button>
+                    </div>
+                  </section>
+                </div>
+                <button class="basic-scene-run" id="analyze-basic-scenes" type="button">✦ 识别全部镜头</button>
+                <div class="basic-scene-footnote">
+                  <span id="basic-scene-save-state">点击选项即可人工修正</span>
+                  <small>人工结果不会被重新识别覆盖</small>
+                </div>
+              </div>
+              <div class="side-tab-panel subtitle-dialogue-panel" id="subtitle-dialogue-panel" role="tabpanel" aria-labelledby="subtitle-dialogue-tab" hidden>
+                <div class="subtitle-dialogue-summary">
+                  <div>
+                    <span>当前镜头对白</span>
+                    <strong id="subtitle-dialogue-count">2 条字幕</strong>
+                  </div>
+                  <span class="subtitle-language-state" id="subtitle-language-state">英文原文 + 中文译文</span>
+                </div>
+                <p class="subtitle-source" id="subtitle-source">字幕来源：影片英文字幕</p>
+                <div class="subtitle-tool-stack">
+                  <button class="ai-translation-entry cloud-subtitle-entry" id="open-cloud-subtitle" type="button">
+                    <span class="ai-translation-entry-icon">云</span>
+                    <span class="ai-translation-entry-copy">
+                      <strong>云端提取画面字幕</strong>
+                      <small id="cloud-subtitle-status">未设置 · 经济提取</small>
+                    </span>
+                    <span class="ai-translation-entry-action">设置 →</span>
+                  </button>
+                </div>
+                <div class="subtitle-dialogue-list" id="subtitle-dialogue-list">
+                  <article class="subtitle-cue-card" data-cue-index="0">
+                    <div class="subtitle-cue-meta">
+                      <span>对白 01</span>
+                      <time>00:42:15:18 — 00:42:17:12</time>
+                    </div>
+                    <label>
+                      英文原文
+                      <textarea data-subtitle-field="originalText">I didn't know if you'd come.</textarea>
+                    </label>
+                    <label>
+                      中文译文
+                      <textarea data-subtitle-field="translatedText">我不知道你会不会来。</textarea>
+                    </label>
+                  </article>
+                  <article class="subtitle-cue-card" data-cue-index="1">
+                    <div class="subtitle-cue-meta">
+                      <span>对白 02</span>
+                      <time>00:42:18:02 — 00:42:19:20</time>
+                    </div>
+                    <label>
+                      英文原文
+                      <textarea data-subtitle-field="originalText">Neither did I.</textarea>
+                    </label>
+                    <label>
+                      中文译文
+                      <textarea data-subtitle-field="translatedText">我也不知道。</textarea>
+                    </label>
+                  </article>
+                </div>
+                <div class="subtitle-dialogue-empty" id="subtitle-dialogue-empty" hidden>
+                  <span>文</span>
+                  <strong>当前镜头没有字幕对白</strong>
+                  <p>可以重新读取已有字幕，也可以使用上方云端提取画面字幕。</p>
+                  <button class="secondary-button subtitle-retry-button" id="retry-read-subtitles" type="button">重新读取已有字幕</button>
+                </div>
+                <div class="subtitle-edit-state">
+                  <span id="subtitle-save-state">修改会自动保存</span>
+                  <small>只保存校正版，不改动原字幕文件</small>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="page" id="archive-page">
+          <div class="archive-hero">
+            <div>
+              <p class="eyebrow">DIRECTOR'S VISUAL MEMORY</p>
+              <h2>导演资料库</h2>
+              <p>把每一次拉片，变成下一次创作可以调用的视觉记忆。</p>
+            </div>
+            <div class="archive-stats">
+              <div><strong id="archive-frame-count">0</strong><span>静帧</span></div>
+              <div><strong id="archive-clip-count">0</strong><span>片段</span></div>
+              <div><strong id="archive-project-count">0</strong><span>来源影片</span></div>
+              <div><strong id="archive-tag-count">0</strong><span>标签</span></div>
+            </div>
+          </div>
+
+          <div class="archive-controls">
+            <div class="filter-tabs">
+              <button class="active" data-filter="all">全部</button>
+              <button data-filter="frame">静帧</button>
+              <button data-filter="clip">片段</button>
+            </div>
+            <div class="archive-actions">
+              <label class="archive-search"><span>⌕</span><input id="archive-search-input" placeholder="搜索影片、镜号、标签或笔记…" /></label>
+              <button class="secondary-button archive-filter-toggle" id="archive-more-filters" type="button" aria-expanded="false">更多筛选</button>
+              <button class="secondary-button archive-bulk-toggle" id="archive-bulk-button" type="button">批量整理</button>
+            </div>
+          </div>
+
+          <div class="archive-filter-panel" id="archive-filter-panel" hidden>
+            <label>
+              <span>来源影片</span>
+              <select id="archive-project-filter">
+                <option value="all">全部影片</option>
+              </select>
+            </label>
+            <label>
+              <span>排序方式</span>
+              <select id="archive-sort">
+                <option value="newest">最近收藏</option>
+                <option value="film">影片名称</option>
+                <option value="shot">镜头顺序</option>
+              </select>
+            </label>
+            <div class="archive-tag-filter">
+              <span>标签</span>
+              <div id="archive-tag-filters"></div>
+            </div>
+            <button class="archive-clear-filters" id="archive-clear-filters" type="button">清除筛选</button>
+          </div>
+
+          <div class="archive-bulk-bar" id="archive-bulk-bar" hidden>
+            <div>
+              <strong id="archive-selected-count">已选择 0 项</strong>
+              <span>点击资料卡进行多选</span>
+            </div>
+            <div class="archive-bulk-tags">
+              <div id="archive-bulk-common-tags"></div>
+              <label><input id="archive-bulk-tag-input" maxlength="20" placeholder="输入自定义标签" /></label>
+              <button class="secondary-button" id="archive-bulk-add-tag" type="button">添加标签</button>
+              <button class="secondary-button" id="archive-bulk-remove-tag" type="button">移除标签</button>
+              <button class="primary-button" id="archive-bulk-finish" type="button">完成整理</button>
+            </div>
+          </div>
+
+          <div class="section-heading archive-heading">
+            <div><h2>最近收藏</h2><p>所有资料都保留原影片与时间码</p></div>
+            <span class="archive-order" id="archive-order-label">按收藏时间 ↓</span>
+          </div>
+
+          <div class="archive-empty" id="archive-empty">
+            <span>◇</span>
+            <h3>还没有收藏静帧</h3>
+            <p>在拉片工作台选中镜头，停在想保留的画面，再点击“收藏到导演资料库”。</p>
+          </div>
+          <div class="memory-grid" id="memory-grid"></div>
+
+          <aside class="archive-collection-drop" id="archive-collection-drop" hidden>
+            <div class="archive-collection-drop-head">
+              <span>加入收藏夹</span>
+              <small>拖到目标收藏夹后松开</small>
+            </div>
+            <div class="archive-drop-list" id="archive-drop-list"></div>
+          </aside>
+        </section>
+
+        <section class="page" id="inspiration-page">
+          <div class="inspiration-heading">
+            <div>
+              <p class="eyebrow">DIRECTOR'S INSPIRATION BOARD</p>
+              <h2>灵感板</h2>
+              <p>把静帧、片段、图片与文字放进同一个创作语境。</p>
+            </div>
+            <div class="inspiration-heading-actions">
+              <button class="secondary-button" id="import-inspiration-images" type="button">↑ 导入图片</button>
+              <button class="secondary-button" id="new-inspiration-note" type="button">＋ 新建文字</button>
+              <button class="primary-button" id="new-inspiration-collection" type="button">＋ 新建收藏夹</button>
+              <input id="inspiration-image-input" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,image/jpeg,image/png,image/webp,image/heic" multiple hidden />
+            </div>
+          </div>
+
+          <div class="inspiration-layout" id="inspiration-layout">
+            <aside class="collection-panel">
+              <div class="collection-panel-head">
+                <div>
+                  <span>收藏夹</span>
+                  <small>最近使用优先</small>
+                </div>
+                <button id="collapse-collection-panel" type="button" aria-label="收起收藏夹">‹</button>
+              </div>
+              <div class="collection-list" id="collection-list">
+                <button class="collection-item active" data-collection="all" type="button">
+                  <span class="collection-cover all-cover">✦</span>
+                  <span><strong>全部灵感</strong><small>24 项资料</small></span>
+                </button>
+                <button class="collection-item" data-collection="atmosphere" type="button">
+                  <span class="collection-cover"><img src="./assets/still-05.png" alt="" /></span>
+                  <span><strong>潮湿城市与孤独</strong><small>12 项资料</small></span>
+                </button>
+                <button class="collection-item" data-collection="blocking" type="button">
+                  <span class="collection-cover"><img src="./assets/still-07.png" alt="" /></span>
+                  <span><strong>双人调度参考</strong><small>7 项资料</small></span>
+                </button>
+                <button class="collection-item" data-collection="color" type="button">
+                  <span class="collection-cover"><img src="./assets/still-11.png" alt="" /></span>
+                  <span><strong>冷色夜景</strong><small>5 项资料</small></span>
+                </button>
+              </div>
+            </aside>
+
+            <div class="inspiration-workspace">
+              <div class="inspiration-toolbar">
+                <label class="inspiration-search">
+                  <span>⌕</span>
+                  <input id="inspiration-search-input" type="search" placeholder="搜索片名、文字标题或导演笔记…" />
+                </label>
+                <div class="inspiration-filters" id="inspiration-filters">
+                  <button class="active" data-inspiration-filter="all" type="button">全部</button>
+                  <button data-inspiration-filter="frame" type="button">静帧</button>
+                  <button data-inspiration-filter="clip" type="button">片段</button>
+                  <button data-inspiration-filter="image" type="button">图片</button>
+                  <button data-inspiration-filter="text" type="button">文字</button>
+                </div>
+                <button class="inspiration-bulk-button" id="inspiration-bulk-button" type="button">批量整理</button>
+              </div>
+
+              <div class="inspiration-context">
+                <div>
+                  <h3 id="inspiration-collection-title">全部灵感</h3>
+                  <p id="inspiration-collection-description">已加入收藏夹的资料会在这里合并展示，同一份资料只出现一次。</p>
+                </div>
+                <div class="inspiration-context-actions">
+                  <span id="inspiration-result-count">8 项资料</span>
+                  <button id="manage-inspiration-collection" type="button" hidden>管理收藏夹</button>
+                </div>
+              </div>
+
+              <div class="inspiration-bulk-bar" id="inspiration-bulk-bar" hidden>
+                <span><strong id="inspiration-selected-count">0</strong> 项已选择</span>
+                <div>
+                  <button type="button" data-bulk-action="add">加入收藏夹</button>
+                  <button type="button" data-bulk-action="remove">移出收藏夹</button>
+                  <button type="button" data-bulk-action="cancel">完成</button>
+                </div>
+              </div>
+
+              <div class="inspiration-empty" id="inspiration-empty" hidden>
+                <span>✦</span>
+                <h3>当前没有符合条件的资料</h3>
+                <p>可以添加已有资料，或者写下一张新的文字卡片。</p>
+                <div>
+                  <button class="secondary-button" type="button" data-empty-action="add">添加资料</button>
+                  <button class="primary-button" type="button" data-empty-action="text">新建文字</button>
+                </div>
+              </div>
+
+              <div class="inspiration-masonry" id="inspiration-masonry">
+                <article class="inspiration-card" data-preview-demo="true" data-inspiration-type="frame" data-item-id="demo-frame-1" data-collections="atmosphere,color" data-search="潮汐之后 雨夜车站 等待让画面保持安静">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="inspiration-visual"><img src="./assets/still-05.png" alt="《潮汐之后》雨夜车站静帧" /></div>
+                  <div class="inspiration-card-copy">
+                    <div><span>《潮汐之后》</span><b>静帧</b></div>
+                    <p>镜头 042 · 00:31:18:06</p>
+                  </div>
+                </article>
+
+                <article class="inspiration-card text-card" data-preview-demo="true" data-inspiration-type="text" data-collections="atmosphere" data-search="孤独感不是空镜 城市始终在人物身后运转 导演笔记">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="text-card-inner">
+                    <span>导演随记</span>
+                    <h4>孤独感不是空镜</h4>
+                    <p>让城市始终在人物身后运转。环境越繁忙，人物的停顿就越明显。</p>
+                    <small>今天 22:18 · 自动保存</small>
+                  </div>
+                </article>
+
+                <article class="inspiration-card" data-preview-demo="true" data-inspiration-type="clip" data-item-id="demo-clip-1" data-collections="blocking" data-search="潮汐之后 咖啡馆重逢 双人调度 视线不断被前景切断">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="inspiration-visual clip-visual">
+                    <img src="./assets/still-07.png" alt="《潮汐之后》咖啡馆片段封面" />
+                    <span class="clip-play">▶</span>
+                    <small>12.4 秒</small>
+                  </div>
+                  <div class="inspiration-card-copy">
+                    <div><span>《潮汐之后》</span><b>片段</b></div>
+                    <p>镜头 086 · 01:04:12:18</p>
+                  </div>
+                </article>
+
+                <article class="inspiration-card" data-preview-demo="true" data-inspiration-type="image" data-collections="color" data-search="蓝色玻璃反光 导入图片 冷色夜景 光线参考">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="inspiration-visual portrait-visual"><img src="./assets/still-11.png" alt="蓝色玻璃反光参考图片" /></div>
+                  <div class="inspiration-card-copy">
+                    <div><span>蓝色玻璃反光</span><b>导入图片</b></div>
+                    <p>冷色夜景 · 光线参考</p>
+                  </div>
+                </article>
+
+                <article class="inspiration-card" data-preview-demo="true" data-inspiration-type="frame" data-item-id="demo-frame-2" data-collections="blocking" data-search="北岸来信 门框 双人关系 人物距离">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="inspiration-visual tall-visual"><img src="./assets/still-03.png" alt="《北岸来信》门框构图静帧" /></div>
+                  <div class="inspiration-card-copy">
+                    <div><span>《北岸来信》</span><b>静帧</b></div>
+                    <p>镜头 019 · 00:12:44:03</p>
+                  </div>
+                </article>
+
+                <article class="inspiration-card text-card" data-preview-demo="true" data-inspiration-type="text" data-collections="blocking,color" data-search="重逢场景调度 先让两个人共享空间 再逐渐拆开 导演笔记">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="text-card-inner">
+                    <span>场面调度</span>
+                    <h4>重逢场景的距离变化</h4>
+                    <p>先让两个人共享同一块背景，再用前景和视线逐渐把他们拆开。</p>
+                    <small>昨天 18:40 · 自动保存</small>
+                  </div>
+                </article>
+
+                <article class="inspiration-card" data-preview-demo="true" data-inspiration-type="clip" data-item-id="demo-clip-2" data-collections="atmosphere,color" data-search="夜班巴士 霓虹倒影 移动镜头 夜景">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="inspiration-visual wide-visual clip-visual">
+                    <img src="./assets/still-09.png" alt="《夜班巴士》霓虹倒影片段封面" />
+                    <span class="clip-play">▶</span>
+                    <small>8.7 秒</small>
+                  </div>
+                  <div class="inspiration-card-copy">
+                    <div><span>《夜班巴士》</span><b>片段</b></div>
+                    <p>镜头 028 · 00:18:09:12</p>
+                  </div>
+                </article>
+
+                <article class="inspiration-card" data-preview-demo="true" data-inspiration-type="image" data-collections="atmosphere" data-search="雨后街道材质 导入图片 潮湿城市 地面反光">
+                  <button class="card-select-mark" type="button" aria-label="选择资料">✓</button>
+                  <div class="inspiration-visual"><img src="./assets/still-12.png" alt="雨后街道材质参考图片" /></div>
+                  <div class="inspiration-card-copy">
+                    <div><span>雨后街道材质</span><b>导入图片</b></div>
+                    <p>潮湿城市 · 地面反光</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="export-page">
+          <div class="export-heading">
+            <div>
+              <p class="eyebrow">REPORT EXPORT CENTER</p>
+              <h2>导出拉片报告</h2>
+              <p>选择需要保留的内容，右侧会立即显示最终报告效果。</p>
+            </div>
+            <div class="export-ready">
+              <span>✓</span>
+              <div><strong>报告可以导出</strong><small>所有内容已保存在本机</small></div>
+            </div>
+          </div>
+
+          <div class="export-layout">
+            <aside class="export-settings">
+              <section class="setting-section project-selection">
+                <div class="setting-title"><span>01</span><strong>当前影片</strong></div>
+                <div class="selected-film" id="report-selected-film">
+                  <div class="selected-film-visual">
+                    <img id="report-film-image" alt="" hidden />
+                    <span id="report-film-placeholder">无静帧</span>
+                  </div>
+                  <div><strong id="report-film-name">尚未导入影片</strong><small id="report-film-meta">导入影片并完成拉片后即可生成真实报告</small></div>
+                  <span class="selected-mark">已选择</span>
+                </div>
+              </section>
+
+              <section class="setting-section">
+                <div class="setting-title"><span>02</span><strong>报告结构</strong></div>
+                <label class="export-option">
+                  <input type="checkbox" data-report-page="cover" checked />
+                  <span class="custom-check">✓</span>
+                  <span><strong>电影感封面</strong><small>影片信息、主创与核心数据</small></span>
+                </label>
+                <label class="export-option">
+                  <input type="checkbox" data-report-page="overview" checked />
+                  <span class="custom-check">✓</span>
+                  <span><strong>影片分析总览</strong><small>视觉、节奏与声音策略</small></span>
+                </label>
+              </section>
+
+              <section class="setting-section">
+                <div class="setting-title"><span>03</span><strong>逐镜范围</strong><small id="scene-count">共 0 镜</small></div>
+                <label class="export-option scene-option">
+                  <input type="checkbox" data-report-page="shots" checked />
+                  <span class="custom-check">✓</span>
+                  <span><strong>全部已分析镜头</strong><small id="report-shot-range">每页展示 4 镜，自动代表静帧会进入 PDF 和 Excel</small></span>
+                </label>
+              </section>
+
+              <section class="setting-section">
+                <div class="setting-title"><span>04</span><strong>逐镜表内容</strong></div>
+                <div class="field-options">
+                  <label><input type="checkbox" data-report-field="images" checked /><span>静帧截图</span></label>
+                  <label><input type="checkbox" data-report-field="sound" checked /><span>声音 / 字幕对白</span></label>
+                  <label><input type="checkbox" data-report-field="analysis" checked /><span>导演分析</span></label>
+                </div>
+              </section>
+
+              <div class="export-summary">
+                <div><span>预计页数</span><strong id="export-page-count">4 页</strong></div>
+                <div><span>导出格式</span><strong>PDF / Excel / 静帧包</strong></div>
+              </div>
+
+              <div class="export-actions">
+                <button class="primary-button export-download" type="button" data-action="export-pdf">
+                  ⇩ 导出 PDF 报告
+                </button>
+                <button class="secondary-button export-download export-excel" type="button" data-action="export-excel">
+                  ▦ 导出专业图文 Excel
+                </button>
+                <button class="secondary-button export-download export-frames" type="button" data-action="export-frames">
+                  ◇ 导出导演静帧资料包
+                </button>
+              </div>
+              <p class="privacy-note">所有文件都在本机生成，原始影片不会上传。</p>
+            </aside>
+
+            <section class="export-preview-panel">
+              <div class="preview-toolbar">
+                <div>
+                  <strong>报告实时预览</strong>
+                  <span id="preview-page-label">封面 · 第 1 / 4 页</span>
+                </div>
+                <div class="preview-actions">
+                  <button id="preview-prev" aria-label="上一页">←</button>
+                  <button id="preview-next" aria-label="下一页">→</button>
+                  <button id="open-full-report" type="button">打开完整预览 ↗</button>
+                </div>
+              </div>
+              <div class="report-preview-stage">
+                <div class="report-preview-canvas">
+                  <iframe
+                    id="report-preview-frame"
+                    src="../report/index.html?embed=1"
+                    title="当前影片拉片报告实时预览"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="preview-status">
+                <span><i></i> 预览已同步</span>
+                <span>A4 横版 · 高清静帧 · 中文字体已嵌入</span>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="settings-page">
+          <div class="settings-heading">
+            <div>
+              <p class="eyebrow">PERSONAL SETTINGS</p>
+              <h2>个人设置</h2>
+              <p>管理本机资料、可选账号入口，并为未来的云端备份做好准备。</p>
+            </div>
+            <div class="settings-safety">
+              <span>✓</span>
+              <div><strong>原始影片不进入备份</strong><small>只整理拉片资料、导演资料库和灵感板</small></div>
+            </div>
+          </div>
+
+          <article class="settings-account-card">
+            <div class="account-orbit" aria-hidden="true"><span></span><i></i></div>
+            <div class="account-card-main">
+              <div class="backup-card-top">
+                <span class="backup-icon account">导</span>
+                <span class="backup-status later" id="account-status-pill">可选登录</span>
+              </div>
+              <div class="backup-card-copy">
+                <p class="card-kicker">LIGHT ACCOUNT</p>
+                <h3>账号中心（可选）</h3>
+                <p id="account-card-summary">不登录也能完整使用本机拉片。登录入口先作为轻账号地基，后续用于云端备份、换机恢复和会员能力。</p>
+              </div>
+            </div>
+            <div class="account-benefits">
+              <div><span>当前使用</span><strong>不强制登录</strong></div>
+              <div><span>原始影片</span><strong>永不上传</strong></div>
+              <div><span>未来能力</span><strong>备份与会员</strong></div>
+            </div>
+            <div class="account-actions">
+              <button class="primary-button" id="open-account-dialog" type="button">设置本机轻账号</button>
+              <button class="secondary-button" id="clear-account-profile" type="button" hidden>退出本机账号</button>
+            </div>
+            <p class="backup-note muted-note"><span>i</span>当前只在这台电脑保存昵称和邮箱，不会注册云端账号，也不会上传任何资料。</p>
+          </article>
+
+          <div class="backup-card-grid">
+            <article class="backup-card local-backup-card">
+              <div class="backup-card-top">
+                <span class="backup-icon">⌁</span>
+                <span class="backup-status ready">本机可用</span>
+              </div>
+              <div class="backup-card-copy">
+                <p class="card-kicker">LOCAL BACKUP</p>
+                <h3>本地备份与恢复</h3>
+                <p>把全部导演资料整理成一个备份文件，由你选择保存在电脑或移动硬盘。</p>
+              </div>
+              <div class="backup-includes">
+                <div><span>拉片项目</span><strong>全部</strong></div>
+                <div><span>导演笔记</span><strong>全部</strong></div>
+                <div><span>收藏静帧</span><strong>原画质</strong></div>
+                <div><span>片段资料</span><strong>时间码记录</strong></div>
+                <div><span>主题收藏夹</span><strong>全部</strong></div>
+                <div><span>灵感板内容</span><strong>归类与文字</strong></div>
+              </div>
+              <div class="backup-actions">
+                <button class="primary-button" id="preview-create-backup" type="button">创建全部资料备份</button>
+                <button class="secondary-button" id="preview-restore-backup" type="button">从备份文件恢复</button>
+              </div>
+              <p class="backup-note"><span>i</span>恢复时会保留现有资料，只补回缺失内容，并自动跳过重复资料。</p>
+            </article>
+
+            <article class="backup-card cloud-backup-card">
+              <div class="cloud-orbit" aria-hidden="true"><span></span><i></i></div>
+              <div class="backup-card-top">
+                <span class="backup-icon cloud">☁</span>
+                <span class="backup-status later">后续开放</span>
+              </div>
+              <div class="backup-card-copy">
+                <p class="card-kicker">CLOUD BACKUP</p>
+                <h3>云端安全备份</h3>
+                <p>未来登录账号后，可选择把拉片资料和必要静帧备份到云端。</p>
+              </div>
+              <div class="cloud-promise">
+                <div><span>原始影片</span><strong>永不上传</strong></div>
+                <div><span>备份内容</span><strong>用户可控</strong></div>
+                <div><span>同步状态</span><strong>暂未启用</strong></div>
+              </div>
+              <button class="secondary-button cloud-disabled" type="button" disabled>云端备份 · 后续开放</button>
+              <p class="backup-note muted-note"><span>i</span>当前不需要账号，也不会产生云端存储费用。</p>
+            </article>
+          </div>
+
+          <section class="backup-history-preview">
+            <div>
+              <p class="eyebrow">BACKUP HISTORY</p>
+              <h3>最近备份</h3>
+            </div>
+            <div class="backup-empty-state">
+              <span id="backup-history-icon">◇</span>
+              <div><strong id="backup-history-title">还没有创建本地备份</strong><small id="backup-history-detail">创建后，这里会显示备份时间和资料数量。</small></div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="analysis-choice" id="analysis-choice" hidden>
+      <section class="analysis-choice-card" role="dialog" aria-modal="true" aria-labelledby="analysis-choice-title">
+        <div class="analysis-choice-glow" aria-hidden="true"></div>
+        <div class="analysis-choice-heading">
+          <span class="analysis-choice-icon">✦</span>
+          <div>
+            <p class="eyebrow">START A NEW BREAKDOWN</p>
+            <h2 id="analysis-choice-title">如何开始这次拉片？</h2>
+            <p id="analysis-choice-film">影片已导入，原片只保留在你的电脑。</p>
+          </div>
+        </div>
+
+        <div class="analysis-choice-options">
+          <button class="analysis-option recommended" id="start-local-analysis" type="button">
+            <span class="analysis-option-mark">推荐</span>
+            <span class="analysis-option-icon">⌁</span>
+            <span class="analysis-option-copy">
+              <strong>开始本地分析</strong>
+              <small>自动寻找切点并生成镜头，免费且不上传影片</small>
+            </span>
+            <span class="analysis-option-arrow">→</span>
+          </button>
+          <button class="analysis-option" id="start-manual-analysis" type="button">
+            <span class="analysis-option-icon">＋</span>
+            <span class="analysis-option-copy">
+              <strong>直接手动拉片</strong>
+              <small>跳过自动分析，从第一镜开始自己添加切点</small>
+            </span>
+            <span class="analysis-option-arrow">→</span>
+          </button>
+        </div>
+
+        <div class="analysis-progress" id="analysis-progress" hidden>
+          <div class="analysis-progress-copy">
+            <div>
+              <strong>正在本机识别镜头</strong>
+              <span id="analysis-progress-detail">准备读取影片画面…</span>
+            </div>
+            <b id="analysis-progress-percent">0%</b>
+          </div>
+          <div class="analysis-progress-track"><span id="analysis-progress-bar"></span></div>
+          <p>分析期间可以保持窗口在后台，影片不会上传。</p>
+        </div>
+
+        <p class="analysis-choice-footnote">云端精细分析暂不启用，后续可根据本地分析效果再决定是否接入。</p>
+      </section>
+    </div>
+
+    <div class="restore-preview-overlay" id="restore-preview-overlay" hidden>
+      <section class="restore-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="restore-preview-title">
+        <button class="restore-close" id="restore-preview-close" type="button" aria-label="关闭">×</button>
+        <div class="restore-heading">
+          <span>⇧</span>
+          <div>
+            <p class="eyebrow">RESTORE PREVIEW</p>
+            <h2 id="restore-preview-title">确认恢复这份备份？</h2>
+            <p id="restore-preview-description">正式恢复前会先检查资料完整性。</p>
+          </div>
+        </div>
+        <div class="restore-file">
+          <div><span>备份日期</span><strong id="restore-backup-date">等待选择备份</strong></div>
+          <small id="restore-backup-name">新天堂电影院-导演资料备份.cpbak</small>
+        </div>
+        <div class="restore-stats">
+          <div><strong id="restore-project-count">0</strong><span>拉片影片</span></div>
+          <div><strong id="restore-frame-count">0</strong><span>收藏静帧</span></div>
+          <div><strong id="restore-clip-count">0</strong><span>片段资料</span></div>
+          <div><strong id="restore-shot-count">0</strong><span>镜头记录</span></div>
+        </div>
+        <div class="restore-stats inspiration-restore-stats">
+          <div><strong id="restore-collection-count">0</strong><span>主题收藏夹</span></div>
+          <div><strong id="restore-inspiration-count">0</strong><span>灵感资料</span></div>
+          <div><strong id="restore-note-count">0</strong><span>文字卡片</span></div>
+        </div>
+        <div class="restore-safe-note">
+          <span>✓</span>
+          <p><strong>安全合并恢复</strong>现有资料不会被删除，重复内容会自动跳过。</p>
+        </div>
+        <div class="restore-actions">
+          <button class="secondary-button" id="restore-preview-cancel" type="button">暂不恢复</button>
+          <button class="primary-button" id="restore-preview-confirm" type="button">确认合并恢复</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="restore-preview-overlay account-overlay" id="account-overlay" hidden>
+      <section class="restore-preview-dialog account-dialog" role="dialog" aria-modal="true" aria-labelledby="account-dialog-title">
+        <button class="restore-close" id="account-dialog-close" type="button" aria-label="关闭">×</button>
+        <div class="restore-heading account-dialog-heading">
+          <span>导</span>
+          <div>
+            <p class="eyebrow">LIGHT ACCOUNT</p>
+            <h2 id="account-dialog-title">设置本机轻账号</h2>
+            <p>先保存一个本机账号身份。未来接入云端备份后，再升级为真正的云端登录。</p>
+          </div>
+        </div>
+        <form class="account-form" id="account-form">
+          <label>
+            <span>显示名称</span>
+            <input id="account-display-name" type="text" maxlength="20" placeholder="例如：导演工作台" autocomplete="name" />
+          </label>
+          <label>
+            <span>邮箱</span>
+            <input id="account-email" type="email" placeholder="用于未来云端账号绑定" autocomplete="email" />
+          </label>
+          <div class="restore-safe-note account-safe-note">
+            <span>✓</span>
+            <p><strong>本机保存</strong>当前不会上传资料、不会创建云端账号，也不会影响本地备份和拉片。</p>
+          </div>
+          <p class="ai-translation-error" id="account-form-error" hidden></p>
+          <div class="restore-actions">
+            <button class="secondary-button" id="account-dialog-cancel" type="button">暂不设置</button>
+            <button class="primary-button" id="account-save-profile" type="submit">保存本机账号</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div class="project-overview-overlay" id="project-overview-overlay" hidden>
+      <section class="project-overview-dialog" role="dialog" aria-modal="true" aria-labelledby="project-overview-title">
+        <button class="project-overview-close" id="project-overview-close" type="button" aria-label="关闭">×</button>
+        <div class="project-overview-heading">
+          <span>◫</span>
+          <div>
+            <p class="eyebrow">FILM OVERVIEW</p>
+            <h2 id="project-overview-title">影片总览</h2>
+            <p id="project-overview-subtitle">查看这部影片的拉片进度、收藏和笔记完成度。</p>
+          </div>
+        </div>
+        <div class="project-overview-stats">
+          <div><strong id="overview-shot-count">0</strong><span>镜头</span></div>
+          <div><strong id="overview-frame-count">0</strong><span>静帧收藏</span></div>
+          <div><strong id="overview-clip-count">0</strong><span>片段收藏</span></div>
+          <div><strong id="overview-note-progress">0%</strong><span>笔记完成度</span></div>
+        </div>
+        <div class="project-overview-body">
+          <article>
+            <span>当前状态</span>
+            <strong id="overview-status">等待导入影片</strong>
+            <p id="overview-status-detail">导入影片后，这里会显示本片的拉片状态。</p>
+          </article>
+          <article>
+            <span>最近编辑</span>
+            <strong id="overview-updated">暂无记录</strong>
+            <p>这里用于快速判断是否要继续上次进度。</p>
+          </article>
+        </div>
+        <div class="project-overview-actions">
+          <button class="secondary-button" id="project-overview-cancel" type="button">先看影片库</button>
+          <button class="primary-button" id="project-overview-continue" type="button">继续拉片</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="project-overview-overlay library-category-editor-overlay" id="library-category-editor-overlay" hidden>
+      <section class="project-overview-dialog library-category-editor-dialog" role="dialog" aria-modal="true" aria-labelledby="library-category-editor-title">
+        <button class="project-overview-close" id="library-category-editor-close" type="button" aria-label="关闭">×</button>
+        <div class="project-overview-heading">
+          <span>＋</span>
+          <div>
+            <p class="eyebrow">NEW CATEGORY</p>
+            <h2 id="library-category-editor-title">新建影片分类</h2>
+            <p>给常用影片方向起个名字，之后可以把最近项目拖进来。</p>
+          </div>
+        </div>
+        <form class="library-category-form" id="library-category-form">
+          <label>
+            <span>分类名称</span>
+            <input id="library-category-name" maxlength="16" placeholder="例如：长镜头参考" autocomplete="off" />
+          </label>
+          <p class="collection-editor-error" id="library-category-error" hidden></p>
+          <div class="project-overview-actions">
+            <button class="secondary-button" id="library-category-editor-cancel" type="button">取消</button>
+            <button class="primary-button" type="submit">保存分类</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div class="move-cut-overlay" id="move-cut-overlay" hidden>
+      <section class="move-cut-dialog" role="dialog" aria-modal="true" aria-labelledby="move-cut-title">
+        <button class="move-cut-close" id="move-cut-close" type="button" aria-label="关闭">×</button>
+        <div class="move-cut-heading">
+          <span>↔</span>
+          <div>
+            <p class="eyebrow">CUT ADJUSTMENT</p>
+            <h2 id="move-cut-title">移动当前切点</h2>
+            <p id="move-cut-range">请选择一个镜头切点。</p>
+          </div>
+        </div>
+        <label class="move-cut-slider-label">
+          <span>拖动切点位置</span>
+          <input id="move-cut-slider" type="range" min="0" max="1" step="0.04" value="0" />
+        </label>
+        <div class="move-cut-time-row">
+          <label>
+            <span>输入时间码</span>
+            <input id="move-cut-time-input" value="00:00:00:00" />
+          </label>
+          <button class="secondary-button" id="move-cut-use-playhead" type="button">使用当前播放位置</button>
+        </div>
+        <p class="move-cut-hint" id="move-cut-hint">切点必须放在前后镜头之间。</p>
+        <div class="move-cut-actions">
+          <button class="secondary-button" id="move-cut-cancel" type="button">取消</button>
+          <button class="primary-button" id="move-cut-confirm" type="button">确认移动切点</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="ai-translation-overlay cloud-subtitle-overlay" id="cloud-subtitle-overlay" hidden>
+      <section class="ai-translation-dialog" role="dialog" aria-modal="true" aria-labelledby="cloud-subtitle-title">
+        <button class="ai-translation-close" id="cloud-subtitle-close" type="button" aria-label="关闭">×</button>
+        <div class="ai-translation-heading">
+          <span>云</span>
+          <div>
+            <p class="eyebrow">CLOUD SUBTITLE EXTRACTION</p>
+            <h2 id="cloud-subtitle-title">云端提取画面字幕</h2>
+            <p>经济模式只上传压缩后的字幕区域画面，尽量降低两小时影片的云端费用。</p>
+          </div>
+        </div>
+
+        <div class="ai-translation-provider">
+          <div>
+            <span class="ai-provider-mark">AI</span>
+            <span><strong>OpenAI 视觉模型</strong><small>由用户自行承担云端分析费用</small></span>
+          </div>
+          <span class="ai-provider-state" id="cloud-provider-state">未设置</span>
+        </div>
+
+        <label class="ai-key-field">
+          <span>OpenAI 密钥</span>
+          <input
+            id="cloud-subtitle-key"
+            type="password"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="在这里填写 OpenAI 密钥"
+          />
+          <small id="cloud-key-hint">密钥只安全保存在这台电脑，不进入项目文件或备份。</small>
+        </label>
+
+        <div class="ai-translation-privacy">
+          <span>✓</span>
+          <p><strong>原始影片不会整片上传</strong>点击开始后，只上传按时间抽取并压缩后的字幕区域画面。</p>
+        </div>
+
+        <div class="ai-translation-task">
+          <div class="ai-translation-task-copy">
+            <span>当前影片</span>
+            <strong id="cloud-subtitle-task-title">等待导入影片</strong>
+            <small id="cloud-subtitle-task-detail">导入影片后，可手动开始经济提取。</small>
+          </div>
+          <button class="ai-translation-start" id="start-cloud-subtitle" type="button" disabled>开始提取</button>
+          <div class="ai-translation-progress" id="cloud-subtitle-progress" hidden>
+            <div><span id="cloud-subtitle-progress-label">正在提取…</span><b id="cloud-subtitle-progress-percent">0%</b></div>
+            <i><span id="cloud-subtitle-progress-bar"></span></i>
+          </div>
+          <p class="ai-translation-error" id="cloud-subtitle-error" hidden></p>
+        </div>
+
+        <div class="ai-translation-actions">
+          <button class="text-danger-button" id="remove-cloud-subtitle-key" type="button" hidden>移除已保存密钥</button>
+          <span></span>
+          <button class="secondary-button" id="cancel-cloud-subtitle" type="button">取消</button>
+          <button class="primary-button" id="save-cloud-subtitle" type="button">安全保存</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="ai-translation-overlay" id="ai-translation-overlay" hidden>
+      <section class="ai-translation-dialog" role="dialog" aria-modal="true" aria-labelledby="ai-translation-title">
+        <button class="ai-translation-close" id="ai-translation-close" type="button" aria-label="关闭">×</button>
+        <div class="ai-translation-heading">
+          <span>文</span>
+          <div>
+            <p class="eyebrow">AI SUBTITLE TRANSLATION</p>
+            <h2 id="ai-translation-title">AI 字幕翻译</h2>
+            <p>影片只有英文字幕时，可使用 DeepSeek 翻译为中文，并保留英文原文。</p>
+          </div>
+        </div>
+
+        <div class="ai-translation-provider">
+          <div>
+            <span class="ai-provider-mark">AI</span>
+            <span><strong>DeepSeek</strong><small>由用户自行承担翻译费用</small></span>
+          </div>
+          <span class="ai-provider-state" id="ai-provider-state">未设置</span>
+        </div>
+
+        <label class="ai-key-field">
+          <span>DeepSeek 密钥</span>
+          <input
+            id="ai-translation-key"
+            type="password"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="在这里填写新密钥"
+          />
+          <small id="ai-key-hint">密钥只安全保存在这台电脑，不进入项目文件或备份。</small>
+        </label>
+
+        <div class="ai-translation-privacy">
+          <span>✓</span>
+          <p><strong>原始影片不会上传</strong>只有需要翻译的英文字幕文字会发送给 DeepSeek。</p>
+        </div>
+
+        <div class="ai-translation-task">
+          <div class="ai-translation-task-copy">
+            <span>当前影片</span>
+            <strong id="ai-translation-task-title">等待导入英文字幕</strong>
+            <small id="ai-translation-task-detail">导入影片后，可在这里手动开始翻译。</small>
+          </div>
+          <button class="ai-translation-start" id="start-ai-translation" type="button" disabled>开始翻译</button>
+          <div class="ai-translation-progress" id="ai-translation-progress" hidden>
+            <div><span id="ai-translation-progress-label">正在翻译…</span><b id="ai-translation-progress-percent">0%</b></div>
+            <i><span id="ai-translation-progress-bar"></span></i>
+          </div>
+          <p class="ai-translation-error" id="ai-translation-error" hidden></p>
+        </div>
+
+        <div class="ai-translation-actions">
+          <button class="text-danger-button" id="remove-ai-translation-key" type="button" hidden>移除已保存密钥</button>
+          <span></span>
+          <button class="secondary-button" id="cancel-ai-translation" type="button">取消</button>
+          <button class="primary-button" id="save-ai-translation" type="button">安全保存</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="inspiration-preview-overlay" id="inspiration-preview-overlay" hidden>
+      <section class="inspiration-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="inspiration-preview-title">
+        <button class="inspiration-preview-close" id="inspiration-preview-close" type="button" aria-label="关闭">×</button>
+        <div class="inspiration-preview-media" id="inspiration-preview-media">
+          <img id="inspiration-preview-image" src="./assets/still-05.png" alt="" />
+          <button class="inspiration-preview-play" id="inspiration-preview-play" type="button" hidden>▶ 播放片段</button>
+        </div>
+        <div class="inspiration-preview-info">
+          <p class="eyebrow" id="inspiration-preview-type">STATIC FRAME</p>
+          <h2 id="inspiration-preview-title">《潮汐之后》</h2>
+          <p class="inspiration-preview-meta" id="inspiration-preview-meta">镜头 042 · 00:31:18:06</p>
+          <label class="inspiration-preview-note">
+            <span>导演笔记</span>
+            <textarea id="inspiration-preview-note">等待让画面保持安静，雨声承担人物没有说出口的部分。</textarea>
+            <small>修改会自动保存</small>
+          </label>
+          <div class="inspiration-preview-collections">
+            <span>所属收藏夹</span>
+            <div id="inspiration-preview-collection-list"></div>
+          </div>
+          <div class="inspiration-preview-actions">
+            <button class="secondary-button" id="inspiration-remove-card" type="button">移出当前收藏夹</button>
+            <button class="primary-button" id="inspiration-return-source" type="button">回到原片位置</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="archive-detail-overlay" id="archive-detail-overlay" hidden>
+      <section class="archive-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="archive-detail-title">
+        <button class="archive-detail-close" id="archive-detail-close" type="button" aria-label="关闭">×</button>
+        <div class="archive-detail-media">
+          <img id="archive-detail-image" src="./assets/still-05.png" alt="" />
+          <span id="archive-detail-type">静帧</span>
+        </div>
+        <div class="archive-detail-info">
+          <p class="eyebrow">DIRECTOR'S ARCHIVE</p>
+          <h2 id="archive-detail-title">《潮汐之后》</h2>
+          <p class="archive-detail-meta" id="archive-detail-meta">镜头 042 · 00:31:18:06</p>
+          <div class="archive-detail-note">
+            <span>导演笔记</span>
+            <p id="archive-detail-note">等待让画面保持安静。</p>
+          </div>
+          <div class="archive-detail-tags">
+            <div>
+              <span>资料标签</span>
+              <small>点击标签右侧可移除</small>
+            </div>
+            <div class="archive-current-tags" id="archive-current-tags"></div>
+            <div class="archive-common-tags" id="archive-common-tags"></div>
+            <div class="archive-custom-tag">
+              <input id="archive-custom-tag-input" maxlength="20" placeholder="输入自定义标签" />
+              <button class="secondary-button" id="archive-add-custom-tag" type="button">添加</button>
+            </div>
+          </div>
+          <div class="archive-detail-actions">
+            <button class="secondary-button" id="archive-return-source" type="button">回到原片位置</button>
+            <button class="primary-button" id="archive-save-tags" type="button">保存标签</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="structure-board-overlay" id="structure-board-overlay" hidden>
+      <section class="structure-board-dialog" role="dialog" aria-modal="true" aria-labelledby="structure-board-title">
+        <button class="structure-board-close" id="structure-board-close" type="button" aria-label="关闭">×</button>
+        <div class="structure-board-dialog-head">
+          <p class="eyebrow">STORY STRUCTURE BOARD</p>
+          <h2 id="structure-board-title">影片结构画板</h2>
+          <p id="structure-board-subtitle">把人物关系、段落结构、主题线索整理到同一张画板。</p>
+        </div>
+        <div class="structure-board-tools" aria-label="结构画板工具">
+          <button id="structure-add-topic" type="button">＋ 添加主题</button>
+          <button id="structure-add-branch" type="button">＋ 添加分支</button>
+          <button id="structure-rename-node" type="button">重命名</button>
+          <button id="structure-auto-layout" type="button">自动整理</button>
+        </div>
+        <div class="structure-board-workspace">
+          <div class="structure-board-canvas" id="structure-board-canvas"></div>
+        </div>
+        <div class="structure-board-footer">
+          <span id="structure-board-save-state">修改会自动保存到当前影片</span>
+          <button class="primary-button" id="structure-board-done" type="button">完成</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="note-editor-overlay" id="note-editor-overlay" hidden>
+      <section class="note-editor-dialog" role="dialog" aria-modal="true" aria-labelledby="note-editor-title">
+        <button class="note-editor-close" id="note-editor-close" type="button" aria-label="关闭">×</button>
+        <p class="eyebrow">DIRECTOR'S NOTE</p>
+        <h2 id="note-editor-title">新建文字卡片</h2>
+        <p class="note-editor-intro">记录创作想法、场面调度或视觉方向，输入内容会自动保存在本机。</p>
+        <div class="note-editor-fields">
+          <label class="note-editor-field">
+            <span>文字标题</span>
+            <input id="note-title-input" type="text" maxlength="80" autocomplete="off" placeholder="例如：重逢场景的距离变化" />
+          </label>
+          <label class="note-editor-field">
+            <span>导演笔记</span>
+            <textarea id="note-body-input" maxlength="2000" placeholder="写下这张卡片要保留的创作想法…"></textarea>
+          </label>
+          <div class="note-collection-field">
+            <span>保存到收藏夹</span>
+            <div class="note-collection-options" id="note-collection-options"></div>
+          </div>
+        </div>
+        <div class="note-editor-footer">
+          <span class="note-save-state" id="note-save-state">等待输入</span>
+          <button class="primary-button" id="finish-note-editor" type="button">完成</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="collection-editor-overlay" id="collection-editor-overlay" hidden>
+      <section class="collection-editor-dialog" role="dialog" aria-modal="true" aria-labelledby="collection-editor-title">
+        <button class="collection-editor-close" id="collection-editor-close" type="button" aria-label="关闭">×</button>
+        <p class="eyebrow">THEME COLLECTION</p>
+        <h2 id="collection-editor-title">新建主题收藏夹</h2>
+        <p class="collection-editor-intro" id="collection-editor-intro">为一组创作参考起个名字，并写下一句清晰的整理方向。</p>
+        <form id="collection-editor-form">
+          <label class="collection-editor-field">
+            <span>收藏夹名称</span>
+            <input id="collection-name-input" type="text" maxlength="40" autocomplete="off" placeholder="例如：冬日自然光" />
+            <small><b id="collection-name-count">0</b> / 40</small>
+          </label>
+          <label class="collection-editor-field">
+            <span>一句说明</span>
+            <textarea id="collection-description-input" maxlength="120" placeholder="例如：整理低照度、阴天和窗边自然光的影像参考。"></textarea>
+            <small><b id="collection-description-count">0</b> / 120</small>
+          </label>
+          <p class="collection-editor-error" id="collection-editor-error" hidden></p>
+          <div class="collection-editor-actions">
+            <button class="text-danger-button" id="delete-inspiration-collection" type="button" hidden>删除收藏夹</button>
+            <span></span>
+            <button class="secondary-button" id="cancel-collection-editor" type="button">取消</button>
+            <button class="primary-button" id="save-inspiration-collection" type="submit">创建并进入</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div class="collection-delete-overlay" id="collection-delete-overlay" hidden>
+      <section class="collection-delete-dialog" role="alertdialog" aria-modal="true" aria-labelledby="collection-delete-title">
+        <span class="collection-delete-icon">×</span>
+        <h2 id="collection-delete-title">删除这个收藏夹？</h2>
+        <p>静帧和片段仍会保留在导演资料库；只属于这里的文字卡片会一并删除。</p>
+        <div>
+          <button class="secondary-button" id="cancel-collection-delete" type="button">保留收藏夹</button>
+          <button class="danger-button" id="confirm-collection-delete" type="button">确认删除</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="new-user-guide-overlay" id="new-user-guide-overlay" hidden>
+      <section class="new-user-guide" role="dialog" aria-modal="true" aria-labelledby="new-user-guide-title">
+        <div class="new-user-guide-head">
+          <div>
+            <p class="eyebrow">FIRST RUN GUIDE</p>
+            <h2 id="new-user-guide-title">五个最常用入口</h2>
+            <p>照着这张指向图走，新用户也能很快完成第一次拉片。</p>
+          </div>
+          <button class="guide-close" id="guide-close" type="button" aria-label="关闭新用户指南">×</button>
+        </div>
+        <div class="guide-map" aria-label="新用户指向图">
+          <article class="guide-tip guide-tip-new">
+            <span>01</span>
+            <strong>新建拉片</strong>
+            <p>导入本地电影、广告或短片。</p>
+            <button type="button" data-guide-action="new-project">去新建</button>
+          </article>
+          <article class="guide-tip guide-tip-continue">
+            <span>02</span>
+            <strong>继续拉片</strong>
+            <p>回到上次正在分析的影片。</p>
+            <button type="button" data-guide-action="continue">继续</button>
+          </article>
+          <article class="guide-tip guide-tip-workbench">
+            <span>03</span>
+            <strong>拉片工作台</strong>
+            <p>检查切点、写导演笔记、收藏静帧和片段。</p>
+            <button type="button" data-guide-action="workbench">打开</button>
+          </article>
+          <article class="guide-tip guide-tip-archive">
+            <span>04</span>
+            <strong>导演资料库</strong>
+            <p>沉淀所有静帧、片段和标签。</p>
+            <button type="button" data-guide-action="archive">查看</button>
+          </article>
+          <article class="guide-tip guide-tip-export">
+            <span>05</span>
+            <strong>导出中心</strong>
+            <p>导出 PDF、Excel 和静帧资料包。</p>
+            <button type="button" data-guide-action="export">去导出</button>
+          </article>
+        </div>
+        <div class="guide-actions">
+          <button class="secondary-button" id="guide-later" type="button">以后再看</button>
+          <button class="primary-button" id="guide-done" type="button">我知道了</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
